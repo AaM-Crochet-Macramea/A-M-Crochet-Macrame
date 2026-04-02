@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحه الرئيسيه-A@M Crochet</title>
+    <link rel="icon" type="image/png" href="asset/2.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body> 
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="header-logo">
+                <img src="asset/2.png" alt="شعار براند" style="width: 50px; height: 50px; object-fit: contain; border-radius: 50%;">
+                <span class="brand-name-header" style="font-size: 1.1rem; font-weight: 700; color: #5B3A29;"> A@M Crochet & Macrame </span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Text -->
+        <section class="welcome-section">
+            <h2>اختر من مجموعتنا الفريدة</h2>
+            <p>تصاميم حصرية مصنوعة بعناية فائقة</p>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="category-section">
+            <div class="category-title">
+                <i class="fas fa-filter"></i>
+                <span>الأصناف</span>
+            </div>
+            <div class="category-filter">
+                <button class="category-btn active" data-category="all">
+                    <span>جميع الأصناف</span>
+                </button>
+                <button class="category-btn" data-category="crochet">
+                    <span>كروشيه</span>
+                </button>
+                <button class="category-btn" data-category="macrame">
+                    <span>مكراميه</span>
+                </button>
+                <button class="category-btn" data-category="accessories">
+                    <span>اكسسوارات</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <div class="products-grid" id="productsGrid">
+                <!-- Product cards will be inserted here by JavaScript -->
+                <!-- Sample product card (for reference) -->
+                <div class="product-card" data-category="crochet">
+                    <div class="product-image-container">
+                        <img src="https://via.placeholder.com/300x300?text=منتج+كروشيه" alt="منتج كروشيه" class="product-image">
+                        <div class="discount-badge">30%</div>
+                        <div class="product-overlay">
+                            <button class="view-details-btn" onclick="viewProductDetails(1)">
+                                <i class="fas fa-eye"></i>
+                                <span>عرض التفاصيل</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">مثال منتج كروشيه</h3>
+                        <p class="product-category">كروشيه</p>
+                        <div class="product-price">
+                            <span class="price">50 ر.س</span>
+                            <span class="original-price">70 ر.س</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="macrame">
+                    <div class="product-image-container">
+                        <img src="https://via.placeholder.com/300x300?text=منتج+مكراميه" alt="منتج مكراميه" class="product-image">
+                        <div class="discount-badge">20%</div>
+                        <div class="product-overlay">
+                            <button class="view-details-btn" onclick="viewProductDetails(2)">
+                                <i class="fas fa-eye"></i>
+                                <span>عرض التفاصيل</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">مثال منتج مكراميه</h3>
+                        <p class="product-category">مكراميه</p>
+                        <div class="product-price">
+                            <span class="price">75 ر.س</span>
+                            <span class="original-price">95 ر.س</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3> A@M Crochet & Macrame </h3>
+                <p>تصميم وتنفيذ قطع كروشيه ومكراميه تجمع بين الأناقة والدفء واللمسة الفنية. نؤمن أن كل قطعة يدوية تحمل روحًا خاصة، لذلك نصنع منتجاتنا بعناية وحب لتمنحكِ إطلالة مميزة وتضيف جمالًا فريدًا لمنزلك.</p>
+            </div>
+
+            <div class="footer-section contact">
+                <h3>التواصل</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +20 1066063038</p>
+                </div>
+            </div>
+
+            <div class="footer-section social">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/manar_crochet30?igsh=MTYzYWgwOGIOcmNONA==" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/g/18EoavhC8p/" class="social-icon"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 A@M Crochet & Macrame. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

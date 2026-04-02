@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل البدء السريع</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FFF0F6 0%, #FFFFFF 100%);
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #FF69B4;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #FF69B4;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .guide-section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.1);
+            border-right: 5px solid #FF69B4;
+        }
+
+        .guide-section h2 {
+            color: #FF1493;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step {
+            background: #FFF5FA;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #FF69B4;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #FF69B4;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #FF1493;
+        }
+
+        .code-block {
+            background: #f9f9f9;
+            border-left: 4px solid #FF69B4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            display: block;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .tip {
+            background: #FFF9E6;
+            border-left: 4px solid #FFC107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .tip::before {
+            content: "💡 نصيحة: ";
+            font-weight: bold;
+            color: #FF9800;
+        }
+
+        .warning {
+            background: #FFE6E6;
+            border-left: 4px solid #FF6B6B;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning::before {
+            content: "⚠️ تنبيه: ";
+            font-weight: bold;
+            color: #FF6B6B;
+        }
+
+        .success {
+            background: #E6F7E6;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .success::before {
+            content: "✅ ";
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #FF69B4;
+            border: 2px solid #FF69B4;
+        }
+
+        .btn-secondary:hover {
+            background: #FFF0F6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table th {
+            background: #FF69B4;
+            color: white;
+            padding: 12px;
+            text-align: right;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background: #FFF0F6;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #FFF0F6 0%, #FFFFFF 100%);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #FFB6D9;
+        }
+
+        .feature-card h3 {
+            color: #FF69B4;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #FFB6D9;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .guide-section {
+                padding: 15px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌹 دليل البدء السريع</h1>
+            <p class="subtitle">موقع براند الكروشيه والمكراميه</p>
+        </header>
+
+        <!-- الخطوات الأساسية -->
+        <div class="guide-section">
+            <h2>🚀 الخطوات الأساسية</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>فتح الموقع</strong>
+                <p>افتح ملف <code>index.html</code> في متصفح الويب (Chrome, Firefox, Safari, Edge)</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>الصفحة الترحيبية</strong>
+                <p>ستظهر الصفحة الترحيبية مع اللوجو واسم البراند وزر التسوق</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>الذهاب للمتجر</strong>
+                <p>اضغط على زر "GO SHOPPING" للدخول للصفحة الرئيسية</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>تصفح المنتجات</strong>
+                <p>استعرض المنتجات واختر فئة معينة أو شاهد جميع المنتجات</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">5</span>
+                <strong>عرض التفاصيل</strong>
+                <p>اضغط على "عرض التفاصيل" لرؤية تفاصيل المنتج كاملة</p>
+            </div>
+
+            <div class="success">
+                تهانينا! الآن أنت جاهز للبدء في استخدام الموقع!
+            </div>
+        </div>
+
+        <!-- إضافة المنتجات -->
+        <div class="guide-section">
+            <h2>📝 إضافة المنتجات</h2>
+            
+            <p>اتبع هذه الخطوات لإضافة منتج جديد:</p>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>افتح ملف script.js</strong>
+                <p>ابحث عن السطر: <code>const productsData = [</code></p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>أضف منتج جديد</strong>
+                <p>انسخ هذا القالب وعدّله حسب منتجك:</p>
+                <div class="code-block"><code>{
+    id: 3,
+    name: "اسم المنتج",
+    category: "crochet",
+    price: 100,
+    originalPrice: 150,
+    discount: 33,
+    description: "وصف المنتج",
+    material: "الخيط المستخدم",
+    size: "الحجم",
+    colors: "الألوان",
+    production: "وقت الإنتاج",
+    images: [
+        "رابط صورة 1",
+        "رابط صورة 2",
+        "رابط صورة 3",
+        "رابط صورة 4"
+    ]
+}</code></div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>احفظ الملف</strong>
+                <p>اضغط Ctrl+S لحفظ التغييرات</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>أعد تحميل الموقع</strong>
+                <p>اضغط F5 في المتصفح لرؤية المنتج الجديد</p>
+            </div>
+
+            <div class="tip">
+                تأكد من أن كل منتج له <code>id</code> مختلف!
+            </div>
+        </div>
+
+        <!-- الأصناف المتاحة -->
+        <div class="guide-section">
+            <h2>🏷️ الأصناف المتاحة</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>الاسم بالعربية</th>
+                        <th>الكود المستخدم</th>
+                        <th>الوصف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>كروشيه</td>
+                        <td><code>crochet</code></td>
+                        <td>منتجات الكروشيه</td>
+                    </tr>
+                    <tr>
+                        <td>مكراميه</td>
+                        <td><code>macrame</code></td>
+                        <td>منتجات المكراميه</td>
+                    </tr>
+                    <tr>
+                        <td>اكسسوارات</td>
+                        <td><code>accessories</code></td>
+                        <td>الاكسسوارات والإضافيات</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- تخصيص المعلومات -->
+        <div class="guide-section">
+            <h2>📞 تخصيص معلومات التواصل</h2>
+            
+            <p>افتح ملف <code>script.js</code> وابحث عن <code>const contactInfo =</code></p>
+
+            <div class="code-block"><code>const contactInfo = {
+    whatsappNumber: "966501234567", // ضع رقمك بدون +
+    phone: "+966 50 123 4567",
+    email: "info@brandname.com",
+    instagram: "https://instagram.com/brandname",
+    facebook: "https://facebook.com/brandname",
+    tiktok: "https://tiktok.com/@brandname"
+};</code></div>
+
+            <div class="tip">
+                رقم الواتساب يجب أن يكون بدون علامة (+) وبصيغة دوليين (966 للسعودية)
+            </div>
+        </div>
+
+        <!-- المميزات -->
+        <div class="guide-section">
+            <h2>✨ مميزات الموقع</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📱 متجاوب</h3>
+                    <p>يعمل على الهاتف والتابلت والحاسوب</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎨 جميل</h3>
+                    <p>تصميم عصري مع ألوان وردي وأبيض</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔍 تصفية</h3>
+                    <p>اختر المنتجات حسب الفئة</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💬 واتساب</h3>
+                    <p>ربط مباشر بالواتساب للطلب</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🖼️ صور</h3>
+                    <p>معرض صور للمنتج</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 خصومات</h3>
+                    <p>إظهار الأسعار والخصومات</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- أسئلة شائعة -->
+        <div class="guide-section">
+            <h2>❓ أسئلة شائعة</h2>
+            
+            <div style="margin: 15px 0; padding: 15px; background: #FFF5FA; border-radius: 8px;">
+                <strong style="color: #FF69B4;">س: كيف أضيف صورة للمنتج؟</strong>
+                <p>ج: استخدم رابط صورة من الإنترنت أو ضع الصورة في مجلد بجانب الملفات واستخدم المسار النسبي</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px; background: #FFF5FA; border-radius: 8px;">
+                <strong style="color: #FF69B4;">س: هل يمكن إضافة فئات جديدة؟</strong>
+                <p>ج: نعم، عدّل أزرار الفئات في main.html وأضف الفئة الجديدة في script.js</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px; background: #FFF5FA; border-radius: 8px;">
+                <strong style="color: #FF69B4;">س: كيف أتغير لون الموقع؟</strong>
+                <p>ج: عدّل الألوان في ملف styles.css في متغيرات --primary-pink و --light-pink وغيرها</p>
+            </div>
+
+            <div style="margin: 15px 0; padding: 15px; background: #FFF5FA; border-radius: 8px;">
+                <strong style="color: #FF69B4;">س: هل يمكن استخدام الموقع بدون إنترنت؟</strong>
+                <p>ج: نعم، ولكن صور المنتجات تحتاج إنترنت إذا كانت من روابط خارجية</p>
+            </div>
+        </div>
+
+        <!-- الملفات -->
+        <div class="guide-section">
+            <h2>📁 قائمة الملفات</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>اسم الملف</th>
+                        <th>الوصف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>index.html</code></td>
+                        <td>الصفحة الترحيبية (البداية)</td>
+                    </tr>
+                    <tr>
+                        <td><code>main.html</code></td>
+                        <td>الصفحة الرئيسية للمتجر</td>
+                    </tr>
+                    <tr>
+                        <td><code>product-details.html</code></td>
+                        <td>صفحة تفاصيل المنتج</td>
+                    </tr>
+                    <tr>
+                        <td><code>styles.css</code></td>
+                        <td>التنسيق والألوان والتصميم</td>
+                    </tr>
+                    <tr>
+                        <td><code>script.js</code></td>
+                        <td>الوظائف والمنتجات</td>
+                    </tr>
+                    <tr>
+                        <td><code>README.md</code></td>
+                        <td>دليل استخدام مفصل</td>
+                    </tr>
+                    <tr>
+                        <td><code>PRODUCTS_TEMPLATE.js</code></td>
+                        <td>نماذج لإضافة منتجات</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- الخطوات التالية -->
+        <div class="guide-section" style="background: linear-gradient(135deg, #FFF0F6 0%, #FFFFFF 100%);">
+            <h2>🎯 الخطوات التالية</h2>
+            
+            <div class="success">
+                <strong>أنت جاهز الآن! 🎉</strong>
+            </div>
+
+            <ul style="margin: 15px 0;">
+                <li>✅ افتح الموقع في المتصفح</li>
+                <li>✅ أضف منتجاتك الخاصة</li>
+                <li>✅ عدّل معلومات التواصل</li>
+                <li>✅ أضف قسم اجتماعي (إنستجرام، واتساب، إلخ)</li>
+                <li>✅ اختبر جميع الوظائف</li>
+            </ul>
+
+            <div class="button-group">
+                <a href="index.html" class="btn btn-primary">🚀 اذهب للموقع</a>
+                <a href="README.md" class="btn btn-secondary">📖 الدليل الكامل</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3> A@M Crochet & Macrame </h3>
+                    <p>تصميم وتنفيذ قطع كروشيه ومكراميه تجمع بين الأناقة والدفء واللمسة الفنية. نؤمن أن كل قطعة يدوية تحمل روحًا خاصة، لذلك نصنع منتجاتنا بعناية وحب لتمنحكِ إطلالة مميزة وتضيف جمالًا فريدًا لمنزلك.</p>
+                </div>
+
+                <div class="footer-section contact">
+                    <h3>التواصل</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +20 1066063038</p>
+                    </div>
+                </div>
+
+                <div class="footer-section social">
+                    <h3>تابعنا</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/manar_crochet30?igsh=MTYzYWgwOGIOcmNONA==" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/g/18EoavhC8p/" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 A@M Crochet & Macrame. جميع الحقوق محفوظة.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> A@M Crochet - تفاصيل المنتج </title>
+    <link rel="icon" type="image/png" href="asset/2.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="main.html" class="header-logo">
+                <img src="asset/2.png" alt="شعار براند" style="width: 50px; height: 50px; object-fit: contain; border-radius: 50%;">
+                <span class="brand-name-header" style="font-size: 1.1rem; font-weight: 700; color: #5B3A29;"> A@M Crochet & Macrame </span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Product Details -->
+    <main class="product-details-container">
+        <div class="product-details-content" id="productDetails">
+            <div class="product-details-header">
+                <a href="main.html" class="back-button">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>العودة</span>
+                </a>
+            </div>
+
+            <div class="product-details-wrapper">
+                <!-- Product Info Section -->
+                <div class="product-details-info">
+                    <h1 class="details-product-name" id="productName">اسم المنتج</h1>
+                    <div class="details-category-price">
+                        <span class="details-category" id="productCategory">الفئة</span>
+                        <span class="details-price">
+                            <span id="productPrice">السعر</span>
+                        </span>
+                    </div>
+
+                    <div class="product-description">
+                        <h3>وصف المنتج</h3>
+                        <p id="productDescription">
+                            منتج مصنوع بعناية فائقة باستخدام أفضل الخيوط والمواد. تصميم فريد يجمع بين الجمال والعملية.
+                        </p>
+                    </div>
+
+                    <!-- Order Buttons -->
+                    <div class="order-buttons">
+                        <button class="whatsapp-button" onclick="orderWhatsApp()">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>طلب عبر الواتساب</span>
+                        </button>
+                        <button class="contact-button" onclick="contactUs()">
+                            <i class="fas fa-phone"></i>
+                            <span>تواصل معنا</span>
+                        </button>
+                    </div>
+
+                    <div class="product-specs">
+                        <h3>المواصفات</h3>
+                        <ul>
+                            <li><strong>المادة:</strong> <span id="material">خيط عالي الجودة</span></li>
+                            <li><strong>الحجم:</strong> <span id="size">مخصص حسب الطلب</span></li>
+                            <li><strong>الألوان:</strong> <span id="colors">متعددة الألوان</span></li>
+                            <li><strong>وقت الإنتاج:</strong> <span id="production">3-7 أيام</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Product Images Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image-container">
+                        <img id="mainImage" src="https://via.placeholder.com/500x500?text=صورة+المنتج" alt="صورة المنتج" class="main-image">
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <img src="https://via.placeholder.com/100x100?text=صورة+1" alt="صورة 1" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://via.placeholder.com/100x100?text=صورة+2" alt="صورة 2" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://via.placeholder.com/100x100?text=صورة+3" alt="صورة 3" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://via.placeholder.com/100x100?text=صورة+4" alt="صورة 4" class="thumbnail" onclick="changeMainImage(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3> A@M Crochet & Macrame </h3>
+                <p>تصميم وتنفيذ قطع كروشيه ومكراميه تجمع بين الأناقة والدفء واللمسة الفنية. نؤمن أن كل قطعة يدوية تحمل روحًا خاصة، لذلك نصنع منتجاتنا بعناية وحب لتمنحكِ إطلالة مميزة وتضيف جمالًا فريدًا لمنزلك.</p>
+            </div>
+
+            <div class="footer-section contact">
+                <h3>التواصل</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +20 1066063038</p>
+                </div>
+            </div>
+
+            <div class="footer-section social">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/manar_crochet30?igsh=MTYzYWgwOGIOcmNONA==" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/g/18EoavhC8p/" class="social-icon"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 A@M Crochet & Macrame. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
